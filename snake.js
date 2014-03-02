@@ -1,10 +1,12 @@
+// Declares a function that takes the arguments snakeToDraw and apple (which are part of an array called drawableObjects) — this portion of code declares the color and dimensions of the snake and the apple, and then uses the CHUNK library to draw them on the canvas.
 var draw = function(snakeToDraw, apple) {
 	var drawableSnake = { color: "#79BD8F", pixels: snakeToDraw };
-	var drawableApple = { color: "red", pixels: [apple] };
+	var drawableApple = { color: "#C13B00", pixels: [apple] };
 	var drawableObjects = [drawableSnake, drawableApple];
 	CHUNK.draw(drawableObjects);
-}
+} 
 
+// moveSegment is a function that, depending on which direction key the user hits, changes the positioning of the segment (the snake) on the canvas.
 var moveSegment = function(segment) {
 	if (segment.direction === "down") {
 		return { top: segment.top + 1, left: segment.left }
@@ -21,6 +23,7 @@ var moveSegment = function(segment) {
 	return segment;
 	}
 
+// I don't understand what this function does.
 var segmentFurtherForwardThan = function(index, snake) {
 	if (snake[index - 1] === undefined) {
 		return snake[index];
@@ -55,27 +58,36 @@ var advanceGame = function() {
 
 	if (ate(snake, [apple])) {
 		newSnake = growSnake(newSnake);
+		score += 50;
+		document.getElementById("score").innerHTML = "Score: " + score;
 		apple = CHUNK.randomLocation();
 	}
 
 	if (ate(newSnake, snake)) {
 		CHUNK.endGame();
 		CHUNK.flashMessage("ZOINKS! You squished yourself.");
+		finalScore = score;
+		document.getElementById("score").innerHTML = "Score: " + finalScore;
 	}
 	
 	else if (ate(snake, CHUNK.gameBoundaries())) {
 		CHUNK.endGame();
-		CHUNK.flashMessage("BOOM! You hit a wall.")
+		CHUNK.flashMessage("BOOM! You hit a wall.");
+		finalScore = score;
+		document.getElementById("score").innerHTML = "Score: " + finalScore;
 	}
 
-	else { snake = newSnake;
-	draw(snake, apple);
+	else { 
+		snake = newSnake;
+		draw(snake, apple);
 }
 }
 
 var changeDirection = function(direction) {
 	snake[0].direction = direction;
 }
+
+var score = 0;
 
 var apple = { top: 8, left: 10 };
 

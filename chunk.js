@@ -1,7 +1,7 @@
 var CHUNK = {
-  canvasWidth: 800,
+  canvasWidth: 500,
   canvasHeight: 600,
-  pixelSize: 40,
+  pixelSize: 20,
   KEY_MAPPING: {
     39: "right",
     40: "down",
@@ -90,8 +90,8 @@ var CHUNK = {
   flashMessage: function(message) {
     var canvas = document.getElementById("chunk-game");
     var context = canvas.getContext('2d');
-    context.font = '25pt Arial';
-    context.fillStyle = 'red';
-    context.fillText(message, 245, 100);
+    context.font = '25pt Homenaje';
+    context.fillStyle = '#C13B00';
+    context.fillText(message, 100, 100);
   }
 }

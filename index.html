@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <head>
-  <title>SNAKESNAKESNAKESNAKESNAKESNAKESNAKESNAKESNAKESSSSSSSSSSSS</title>
+  <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+  <title>SNAKE</title>
   <style>
+    body {
+      background-color: #94ABB0;
+    }
+
+    #container {
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
     #chunk-game {
-      background-color: black;
+      background-color: #BAD8DE;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      border: 1px solid #1B1D1E;
     }
 
-    h1 {
-      font-family: "Garamond", serif;
+    #score {
+      font-family: 'Homenaje', sans-serif;
       letter-spacing: 1px;
-      font-size: 50px;
+      font-size: 35px;
+      margin-top: 15px;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
+      display: block;
+    }
+
+    footer {
+      bottom: 0;
+      left: 0;  
+      right: 0;
+      height: 20px;
+      background-color: #96CEB4;
+      border-top: 2px solid #BAD8DE;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #0D2B78;
+      letter-spacing: 1px;
+      position: absolute;
+      padding:20px;
     }
   </style>
 </head>
 <body>
-  <h1>SNAAAAAAKE</h1>
-  <canvas id="chunk-game" height="600" width="800"></canvas>
+  <div id="container">
+    <canvas id="chunk-game" height="600" width="500"></canvas>
+    <div id="score">Score: 0</div>
+  </div>
 
   <script type="text/javascript" src="chunk.js"></script>
   <script type="text/javascript" src="snake.js"></script>
+
 </body>
 </html>
