@@ -65,16 +65,16 @@ var advanceGame = function() {
 
 	if (ate(newSnake, snake)) {
 		CHUNK.endGame();
-		CHUNK.flashMessage("ZOINKS! You squished yourself.");
-		finalScore = score;
-		document.getElementById("score").innerHTML = "Score: " + finalScore;
+		// CHUNK.flashMessage("ZOINKS! You squished yourself.");
+		document.getElementById("message").innerHTML = "ZOINKS! You squished yourself.";
+		document.getElementById("score").innerHTML = "Score: " + score;
 	}
 	
 	else if (ate(snake, CHUNK.gameBoundaries())) {
 		CHUNK.endGame();
-		CHUNK.flashMessage("BOOM! You hit a wall.");
-		finalScore = score;
-		document.getElementById("score").innerHTML = "Score: " + finalScore;
+		// CHUNK.flashMessage("BOOM! You hit a wall.");
+		document.getElementById("message").innerHTML = "BOOM! You hit a wall."
+		document.getElementById("score").innerHTML = "Score: " + score;
 	}
 
 	else { 
