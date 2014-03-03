@@ -73,7 +73,7 @@ var advanceGame = function() {
 	else if (ate(snake, CHUNK.gameBoundaries())) {
 		CHUNK.endGame();
 		// CHUNK.flashMessage("BOOM! You hit a wall.");
-		document.getElementById("message").innerHTML = "BOOM! You hit a wall."
+		document.getElementById("message").innerHTML = "KABOOM! You hit a wall."
 		document.getElementById("score").innerHTML = "Score: " + score;
 	}
 
